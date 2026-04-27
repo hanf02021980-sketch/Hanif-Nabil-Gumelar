@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanif Nabil Gumelar — Graphic Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #1A3FD4;
+      --blue-dark: #0F2A96;
+      --blue-mid: #1E4FE8;
+      --green: #AAFF00;
+      --white: #FFFFFF;
+      --ink: #0A1628;
+      --ink-soft: #2A3A50;
+      --gray-bg: #F4F6FA;
+      --border: rgba(10, 22, 40, 0.10);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--blue);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+
+    .nav-logo {
+      font-family: 'Anton', sans-serif;
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: var(--blue);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 0 6%;
+      padding-top: 58px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 48px;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    .hero-name {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(60px, 9vw, 110px);
+      line-height: 0.95;
+      color: var(--white);
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .hero-name .highlight {
+      display: inline-block;
+      background: var(--green);
+      color: var(--ink);
+      padding: 0 12px;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 18px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--ink);
+      padding: 13px 30px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: opacity 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+
+    .btn-green:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      padding: 13px 30px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      transition: border-color 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+
+    .hero-photo-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo-frame {
+      width: 340px;
+      height: 420px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-photo-hint {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: var(--green);
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 3px;
+    }
+
+    .deco-corner {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 6%;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: var(--green);
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 0.95;
+      color: var(--ink);
+      letter-spacing: 1px;
+      margin-bottom: 48px;
+    }
+
+    .section-title.white {
+      color: var(--white);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-photo {
+      width: 240px;
+      height: 300px;
+      border-radius: 6px;
+      background: var(--gray-bg);
+      border: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .about-photo-hint {
+      font-size: 11px;
+      color: #999;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .about-big {
+      font-family: 'Anton', sans-serif;
+      font-size: 28px;
+      color: var(--blue);
+      margin-bottom: 12px;
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+
+    .about-text p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin-bottom: 16px;
+      line-height: 1.85;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .detail-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: right;
+    }
+
+    /* SKILLS */
+    .skills-section {
+      background: var(--blue);
+    }
+
+    .skills-section .section-title {
+      color: var(--white);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 3px;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.07);
+      padding: 28px 20px;
+      transition: background 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .skill-card:hover {
+      background: rgba(170, 255, 0, 0.12);
+    }
+
+    .skill-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 42px;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .skill-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .skill-type {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* PORTFOLIO */
+    .portfolio-section {
+      background: var(--gray-bg);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3px;
+    }
+
+    .project-card {
+      background: var(--white);
+      overflow: hidden;
+      transition: transform 0.2s;
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: scale(1.01);
+    }
+
+    .project-thumb {
+      height: 220px;
+      background: var(--blue);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .thumb-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 80px;
+      color: rgba(255, 255, 255, 0.08);
+      position: absolute;
+      bottom: -10px;
+      right: 10px;
+      line-height: 1;
+    }
+
+    .thumb-hint {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+      z-index: 1;
+    }
+
+    .thumb-icon {
+      color: rgba(255, 255, 255, 0.3);
+      z-index: 1;
+    }
+
+    .project-info {
+      padding: 20px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      background: var(--green);
+      color: var(--ink);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 2px;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 22px;
+      color: var(--ink);
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .project-desc {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* EXPERIENCE */
+    .exp-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      background: var(--gray-bg);
+    }
+
+    .exp-year-col {
+      background: var(--blue);
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .exp-year {
+      font-family: 'Anton', sans-serif;
+      font-size: 14px;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+    }
+
+    .exp-body {
+      padding: 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .exp-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 4px;
+      background: var(--blue);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .exp-photo-hint {
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      padding: 0 4px;
+      line-height: 1.3;
+    }
+
+    .exp-text {
+      flex: 1;
+    }
+
+    .exp-role {
+      font-family: 'Anton', sans-serif;
+      font-size: 20px;
+      color: var(--ink);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .exp-company {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .exp-desc {
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    /* EDUCATION */
+    .edu-section {
+      background: var(--white);
+    }
+
+    .edu-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .edu-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      background: var(--gray-bg);
+    }
+
+    .edu-year-col {
+      background: var(--blue-dark);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .edu-year {
+      font-family: 'Anton', sans-serif;
+      font-size: 13px;
+      color: var(--green);
+      line-height: 1.4;
+      letter-spacing: 0.5px;
+    }
+
+    .edu-body {
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .edu-level {
+      display: inline-block;
+      background: var(--green);
+      color: var(--ink);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+      margin-bottom: 8px;
+      width: fit-content;
+    }
+
+    .edu-school-name {
+      font-family: 'Anton', sans-serif;
+      font-size: 20px;
+      color: var(--ink);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .edu-detail {
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    .edu-item.current .edu-year-col {
+      background: var(--blue);
+    }
+
+    .edu-item.current .edu-school-name {
+      color: var(--blue);
+    }
+
+    /* PRESTASI */
+    .prestasi-section {
+      background: var(--blue);
+    }
+
+    .prestasi-section .section-title {
+      color: var(--white);
+    }
+
+    .prestasi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3px;
+    }
+
+    .prestasi-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      padding: 28px;
+      transition: background 0.2s;
+    }
+
+    .prestasi-card:hover {
+      background: rgba(170, 255, 0, 0.10);
+    }
+
+    .prestasi-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 48px;
+      color: rgba(170, 255, 0, 0.25);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .prestasi-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 18px;
+      color: var(--white);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .prestasi-desc {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.6;
+    }
+
+    .prestasi-hint {
+      background: rgba(170, 255, 0, 0.10);
+      border: 1px dashed rgba(170, 255, 0, 0.3);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .prestasi-hint p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .prestasi-hint strong {
+      color: var(--green);
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--blue);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-intro {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 4px;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2px;
+    }
+
+    .contact-val {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .contact-val a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .contact-val a:hover {
+      color: var(--green);
+    }
+
+    .edu-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 4px;
+      padding: 32px;
+    }
+
+    .edu-big {
+      font-family: 'Anton', sans-serif;
+      font-size: 13px;
+      color: var(--green);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .edu-school {
+      font-family: 'Anton', sans-serif;
+      font-size: 26px;
+      color: var(--white);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+
+    .edu-major {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 4px;
+    }
+
+    .edu-status {
+      display: inline-block;
+      background: var(--green);
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 2px;
+      margin-top: 12px;
+    }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.35);
+      text-align: center;
+      padding: 24px 5%;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    footer span {
+      color: var(--green);
+    }
+
+    @media (max-width: 800px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo-col {
+        display: none;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-item,
+      .edu-item {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#">H<span>N</span>G</a>
+    <ul class="nav-links">
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#skills">Keahlian</a></li>
+      <li><a href="#portfolio">Karya</a></li>
+      <li><a href="#experience">Pengalaman</a></li>
+      <li><a href="#education">Pendidikan</a></li>
+      <li><a href="#prestasi">Prestasi</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-label">Graphic Designer · Tangerang Selatan</p>
+        <h1 class="hero-name">HANIF<br>NABIL<br><span class="highlight">GUMELAR</span></h1>
+        <p class="hero-subtitle">Logo · Layout · Social Media Design</p>
+        <div class="hero-actions">
+          <a class="btn-green" href="#portfolio">Lihat Karya</a>
+          <a class="btn-ghost" href="#contact">Hubungi Saya</a>
+        </div>
+      </div>
+      <div class="hero-photo-col">
+        <div class="hero-photo-frame">
+          <img src="foto-hanif.jpg.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          <div class="hero-badge">Open for Work</div>
+        </div>
+        <div class="deco-corner">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A1628" stroke-width="3"
+            stroke-linecap="round">
+            <path d="M7 17L17 7M7 7h10v10" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="background: var(--white);">
+    <div class="section-inner">
+      <span class="section-tag">Tentang Saya</span>
+      <h2 class="section-title">SIAPA<br>HANIF?</h2>
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="foto-about.png" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="about-text">
+          <p class="about-big">GRAPHIC<br>DESIGNER</p>
+          <p>Halo! Saya Hanif Nabil Gumelar, seorang Graphic Designer dari Tangerang Selatan dengan passion kuat di
+            bidang visual.</p>
+          <p>Saya selalu ingin mempelajari hal-hal baru dan mampu bekerja di bawah tekanan dengan tetap menghasilkan
+            karya terbaik.</p>
+          <p>Saat ini masih bersekolah di SMKN 5 Kota Tangerang Selatan jurusan DKV, aktif mengembangkan skill lewat
+            pengalaman magang nyata.</p>
+        </div>
+        <div>
+          <div class="detail-row"><span class="detail-label">Nama</span><span class="detail-value">Hanif Nabil
+              Gumelar</span></div>
+          <div class="detail-row"><span class="detail-label">Posisi</span><span class="detail-value">Graphic
+              Designer</span></div>
+          <div class="detail-row"><span class="detail-label">Domisili</span><span class="detail-value">Tangerang
+              Selatan</span></div>
+          <div class="detail-row"><span class="detail-label">Status</span><span class="detail-value">Pelajar DKV</span>
+          </div>
+          <div class="detail-row"><span class="detail-label">Tersedia</span><span class="detail-value"
+              style="color:var(--blue);font-weight:700">Open for Work ✓</span></div>
+          <div class="detail-row"><span class="detail-label">Kontak</span><span class="detail-value">+62
+              851-5629-3242</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills-section" id="skills">
+    <div class="section-inner">
+      <span class="section-tag">Keahlian</span>
+      <h2 class="section-title white">TOOLS &<br>SKILL</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-num">01</div>
+          <div class="skill-name">Canva</div>
+          <div class="skill-type">Design Tool</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-num">02</div>
+          <div class="skill-name">Adobe Illustrator</div>
+          <div class="skill-type">Vector Design</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-num">03</div>
+          <div class="skill-name">Photoshop</div>
+          <div class="skill-type">Photo Editing</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-num">04</div>
+          <div class="skill-name">CapCut</div>
+          <div class="skill-type">Video Editing</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-num">05</div>
+          <div class="skill-name">Logo Design</div>
+          <div class="skill-type">Skill Utama</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-num">06</div>
+          <div class="skill-name">Layout Design</div>
+          <div class="skill-type">Skill Utama</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-num">07</div>
+          <div class="skill-name">Social Media</div>
+          <div class="skill-type">Skill Utama</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="section-inner">
+      <span class="section-tag">Karya</span>
+      <h2 class="section-title">PORTFOLIO<br>TERPILIH</h2>
+      <div class="portfolio-grid">
+
+        <!-- PROJECT 1 — ganti gambar: hapus placeholder dan ganti dengan <img src="karya1.jpg" style="width:100%;height:100%;object-fit:cover;"> di dalam .project-thumb -->
+        <div class="project-card">
+          <div class="project-thumb">
+            <span class="thumb-num">01</span>
+            <svg class="thumb-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            <span class="thumb-hint">Ganti dengan gambar karya</span>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Social Media Design</span>
+            <h3 class="project-title">HARI KEMERDEKAAN</h3>
+            <p class="project-desc">Desain konten sosmed peringatan Hari Kemerdekaan Indonesia dengan visual patriotik
+              yang kuat.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+          <div class="project-thumb">
+            <span class="thumb-num">02</span>
+            <svg class="thumb-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            <span class="thumb-hint">Ganti dengan gambar karya</span>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Social Media Design</span>
+            <h3 class="project-title">EVENT SEKOLAH</h3>
+            <p class="project-desc">Konten promosi event sekolah dengan layout dinamis dan visual yang eye-catching.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+          <div class="project-thumb">
+            <span class="thumb-num">03</span>
+            <svg class="thumb-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            <span class="thumb-hint">Ganti dengan gambar karya</span>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Poster Design</span>
+            <h3 class="project-title">POSTER PROMOSI</h3>
+            <p class="project-desc">Desain poster promosi dengan konsep visual kuat dan komunikatif sesuai brief klien.
+            </p>
+          </div>
+        </div>
+
+        <!-- TAMBAH PROJECT BARU: copy salah satu blok <div class="project-card"> di atas dan tempel di sini -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" style="background: var(--white);">
+    <div class="section-inner">
+      <span class="section-tag">Pengalaman</span>
+      <h2 class="section-title">RIWAYAT<br>MAGANG</h2>
+      <div class="exp-grid">
+
+        <div class="exp-item">
+          <div class="exp-year-col">
+            <div class="exp-year">JAN 2026<br>—<br>APR 2026</div>
+          </div>
+          <div class="exp-body">
+            <!-- GANTI FOTO MAGANG: hapus placeholder dan ganti dengan <img src="foto-magang1.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"> -->
+            <div class="exp-photo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)"
+                stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span class="exp-photo-hint">Foto magang</span>
+            </div>
+            <div class="exp-text">
+              <div class="exp-role">GRAPHIC DESIGNER INTERN</div>
+              <div class="exp-company">Satu Empat Apparel</div>
+              <div class="exp-desc">Magang sebagai desainer grafis di Satu Empat Apparel, toko sablon dan apparel di
+                Ciputat, Tangerang Selatan.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year-col">
+            <div class="exp-year">MAR 2025<br>—<br>JUN 2025</div>
+          </div>
+          <div class="exp-body">
+            <!-- GANTI FOTO MAGANG: hapus placeholder dan ganti dengan <img src="foto-magang2.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"> -->
+            <div class="exp-photo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)"
+                stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span class="exp-photo-hint">Foto magang</span>
+            </div>
+            <div class="exp-text">
+              <div class="exp-role">GRAPHIC DESIGNER INTERN</div>
+              <div class="exp-company">PT CERDIG Cerdas Digital</div>
+              <div class="exp-desc">Magang di PT CERDIG, pusat pendidikan teknologi di Pamulang, Tangerang Selatan.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="edu-section" id="education">
+    <div class="section-inner">
+      <span class="section-tag">Pendidikan</span>
+      <h2 class="section-title">RIWAYAT<br>PENDIDIKAN</h2>
+      <div class="edu-timeline">
+
+        <div class="edu-item current">
+          <div class="edu-year-col">
+            <div class="edu-year">2023<br>—<br>SEKARANG</div>
+          </div>
+          <div class="edu-body">
+            <span class="edu-level">SMK · Aktif</span>
+            <div class="edu-school-name">SMKN 5 KOTA TANGERANG SELATAN</div>
+            <div class="edu-detail">Jurusan Desain Komunikasi Visual (DKV)</div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year-col">
+            <div class="edu-year">2023<br>—<br>2024</div>
+          </div>
+          <div class="edu-body">
+            <span class="edu-level">SMP</span>
+            <div class="edu-school-name">SMPIT ASH SHIDDIQIYYAH</div>
+            <div class="edu-detail">Ciputat, Tangerang Selatan, Banten</div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year-col">
+            <div class="edu-year">2019<br>—<br>2020</div>
+          </div>
+          <div class="edu-body">
+            <span class="edu-level">SD</span>
+            <div class="edu-school-name">SDIT ASH SHIDDIQIYYAH</div>
+            <div class="edu-detail">Ciputat, Tangerang Selatan, Banten</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTASI -->
+  <section class="prestasi-section" id="prestasi">
+    <div class="section-inner">
+      <span class="section-tag">Prestasi</span>
+      <h2 class="section-title white">PRESTASI &<br>PENCAPAIAN</h2>
+      <div class="prestasi-grid">
+
+        <!-- TAMBAH PRESTASI: copy blok di bawah ini dan isi datanya
+      <div class="prestasi-card">
+        <div class="prestasi-num">01</div>
+        <div class="prestasi-title">NAMA PRESTASI</div>
+        <div class="prestasi-desc">Deskripsi singkat prestasi kamu di sini.</div>
+      </div>
+      -->
+
+        <div class="prestasi-card prestasi-hint" style="grid-column: 1/-1;">
+          <p><strong>Tambahkan prestasi kamu di sini!</strong><br><br>
+            Contoh: Juara lomba desain, sertifikat pelatihan, penghargaan, dll.<br>
+            Hapus blok ini dan uncomment template di atasnya untuk mulai menambah prestasi.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-inner">
+      <span class="section-tag">Kontak</span>
+      <h2 class="section-title white">MARI<br>BERKOLABORASI</h2>
+      <div class="contact-grid">
+        <div>
+          <p class="contact-intro">Saya terbuka untuk proyek freelance, kolaborasi, maupun peluang kerja. Jangan ragu
+            untuk menghubungi saya!</p>
+          <div class="contact-item">
+            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A1628"
+                stroke-width="2.5">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+              </svg></div>
+            <div>
+              <div class="contact-label">WhatsApp</div>
+              <div class="contact-val"><a href="https://wa.me/6285156293242">+62 851-5629-3242</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A1628"
+                stroke-width="2.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg></div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-val"><a href="mailto:gumelarhanifnabil@gmail.com">gumelarhanifnabil@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A1628"
+                stroke-width="2.5">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg></div>
+            <div>
+              <div class="contact-label">Instagram</div>
+              <div class="contact-val"><a href="https://www.instagram.com/2_nabil_/" target="_blank">@2_nabil_</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A1628"
+                stroke-width="2.5">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+              </svg></div>
+            <div>
+              <div class="contact-label">TikTok</div>
+              <div class="contact-val"><a href="https://www.tiktok.com/@nabil02_2" target="_blank">@nabil02_2</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-big">Pendidikan Terakhir</div>
+          <div class="edu-school">SMKN 5 KOTA TANGERANG SELATAN</div>
+          <div class="edu-major">Desain Komunikasi Visual (DKV)</div>
+          <div class="edu-status">Masih Aktif Bersekolah</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 <span>Hanif Nabil Gumelar</span> · Graphic Designer · Tangerang Selatan</p>
+  </footer>
+
+</body>
+
+</html>
